@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица Менделеева</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            box-sizing: border-box;
+
+            /*font-size: 1.5vw;*/
+            font-size: x-large;
+        }
+        main {
+            height: 100vh;
+            width: 100vw;
+            min-width: 1000px;
+
+            box-sizing: border-box;
+            /*border: 15px solid #245A7A;*/
+            border: 15px solid white;
+        }
+        .table {
+            height: 100%;
+        }
+        table {
+            height: 100%;
+            text-align: center;
+        }
+        td, th {
+            border: .1px solid black;
+            font-weight: bold;
+            position: relative;
+        }
+        .top {
+            position: absolute;
+            top: 0;
+            right: .5ch;
+            font-weight: normal;
+            font-size: small;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            left: .5ch;
+            font-weight: normal;
+            font-size: small;
+        }
+        tr:nth-of-type(-n+13) {
+            background: yellow;
+        }
+        td:nth-of-type(-n+4):not(:nth-child(-n + 2)),
+        tr:nth-child(3) td:nth-child(10){
+            background: #c21773;
+        }
+
+        tr:nth-of-type(6),
+        tr:nth-of-type(7) td:nth-child(-n+3),
+        tr:nth-of-type(9) td:nth-child(-n+3),
+        tr:nth-of-type(11) td:nth-child(-n+3),
+        tr:nth-of-type(10),
+        tr:nth-of-type(12),
+        tr:nth-of-type(8) {
+            background: blue;
+        }
+        .termin {
+            background: lightgray !important;
+        }
+        tr:nth-of-type(7) td:nth-child(4),
+        tr:nth-of-type(9) td:nth-child(4),
+        tr:nth-of-type(11) td:nth-child(4) {
+            background: yellow;
+        }
+        .white{
+            background: white !important;
+        }
+        /*td:hover, th:hover {*/
+        /*    !*z-index: 999;*!*/
+        /*    !*opacity: .8;*!*/
+        /*    !*transform: scale(1.1);*!*/
+        /*}*/
+        #value {
+            background-image: url(1.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="table">
+        <table id="table1" style="width: 100%">
+            <tr class="termin"><th rowspan="2" colspan="2">Периоды</th><th colspan="10">Группы элементов</th></tr>
+            <tr class="termin">
+                <td>&#8544;</td> <td>&#8545;</td> <td class="termin">&#8546;</td> <td class="termin">&#8547;</td>
+                <td>&#8548;</td> <td>&#8549;</td> <td>&#8550;</td> <td>&#8551;</td>
+                <td colspan="2" rowspan="4" id="value"></td>
+            </tr>
+            <tr>
+                <td class="termin">1</td> <td class="termin">1</td>
+                <td><span class="bottom">1</span>H<span class="top">1.01</span></td> <td> </td>
+                <td class="white"> </td> <td class="white"> </td> <td class="white"> </td> <td class="white"> </td>
+                <td><span class="bottom"></span>(H)</td>
+                <td><span class="bottom">2</span>He<span class="top">4.00</span></td>
+            </tr>
+            <tr>
+                <td class="termin">2</td> <td class="termin">2</td>
+                <td><span class="bottom">3</span>Li<span class="top">6.94</span></td>
+                <td><span class="bottom">4</span>Be<span class="top">9.01</span></td>
+                <td><span class="bottom">5</span>B<span class="top">10.81</span></td>
+                <td><span class="bottom">6</span>C<span class="top">12.01</span></td>
+                <td><span class="bottom">7</span>N<span class="top">14.01</span></td>
+                <td><span class="bottom">8</span>O<span class="top">16.00</span></td>
+                <td><span class="bottom">9</span>F<span class="top">19.00</span></td>
+                <td><span class="bottom">10</span>Ne<span class="top">20.18</span></td>
+            </tr>
+            <tr>
+                <td class="termin">3</td> <td class="termin">3</td>
+                <td><span class="bottom">11</span>Na<span class="top">22.99</span></td>
+                <td><span class="bottom">12</span>Mg<span class="top">24.31</span></td>
+                <td><span class="bottom">13</span>Al<span class="top">26.98</span></td>
+                <td><span class="bottom">14</span>Si<span class="top">28.09</span></td>
+                <td><span class="bottom">15</span>P<span class="top">30.97</span></td>
+                <td><span class="bottom">16</span>S<span class="top">32.06</span></td>
+                <td><span class="bottom">17</span>Cl<span class="top">35.45</span></td>
+                <td><span class="bottom">18</span>Ar<span class="top">39.95</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="termin">4</td><td class="termin">4</td>
+                <td><span class="bottom">19</span>K<span class="top">39.10</span></td>
+                <td><span class="bottom">20</span>Ca<span class="top">40.08</span></td>
+                <td><span class="bottom">21</span>Sc<span class="top">44.96</span></td>
+                <td><span class="bottom">22</span>Ti<span class="top">47.90</span></td>
+                <td><span class="bottom">23</span>V<span class="top">50.94</span></td>
+                <td><span class="bottom">24</span>Cr<span class="top">52.00</span></td>
+                <td><span class="bottom">25</span>Mn<span class="top">59.94</span></td>
+                <td><span class="bottom">26</span>Fe<span class="top">55.85</span></td>
+                <td><span class="bottom">27</span>Co<span class="top">58.93</span></td>
+                <td><span class="bottom">28</span>Ni<span class="top">58.70</span></td>
+            </tr>
+            <tr>
+                <td class="termin">5</td>
+                <td><span class="bottom">29</span>Cu<span class="top">63.55</span></td>
+                <td><span class="bottom">30</span>Zn<span class="top">65.38</span></td>
+                <td><span class="bottom">31</span>Ga<span class="top">69.72</span></td>
+                <td><span class="bottom">32</span>Ge<span class="top">72.59</span></td>
+                <td><span class="bottom">33</span>As<span class="top">74.92</span></td>
+                <td><span class="bottom">34</span>Se<span class="top">78.96</span></td>
+                <td><span class="bottom">35</span>Br<span class="top">79.90</span></td>
+                <td><span class="bottom">36</span>Kr<span class="top">83.80</span></td><td class="white" colspan="2"></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="termin">5</td><td class="termin">6</td>
+                <td><span class="bottom">37</span>Rb<span class="top">85.47</span></td>
+                <td><span class="bottom">38</span>Sr<span class="top">87.62</span></td>
+                <td><span class="bottom">39</span>Y<span class="top">88.91</span></td>
+                <td><span class="bottom">40</span>Zr<span class="top">91.22</span></td>
+                <td><span class="bottom">41</span>Nb<span class="top">92.91</span></td>
+                <td><span class="bottom">42</span>Mo<span class="top">95.94</span></td>
+                <td><span class="bottom">43</span>Tc<span class="top">98.91</span></td>
+                <td><span class="bottom">44</span>Ru<span class="top">101.07</span></td>
+                <td><span class="bottom">45</span>Rh<span class="top">102.91</span></td>
+                <td><span class="bottom">46</span>Rd<span class="top">106.42</span></td>
+            </tr>
+            <tr>
+                <td class="termin">7</td>
+                <td><span class="bottom">47</span>Ag<span class="top">107.87</span></td>
+                <td><span class="bottom">48</span>Cd<span class="top">112.41</span></td>
+                <td><span class="bottom">49</span>In<span class="top">114.82</span></td>
+                <td><span class="bottom">50</span>Sn<span class="top">118.69</span></td>
+                <td><span class="bottom">51</span>Sb<span class="top">121.75</span></td>
+                <td><span class="bottom">52</span>Te<span class="top">127.60</span></td>
+                <td><span class="bottom">53</span>I<span class="top">126.90</span></td>
+                <td><span class="bottom">54</span>Xe<span class="top">131.30</span></td><td class="white" colspan="2"></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="termin">6</td><td class="termin">8</td>
+                <td><span class="bottom">55</span>Cs<span class="top">132.91</span></td>
+                <td><span class="bottom">56</span>Ba<span class="top">137.33</span></td>
+                <td><span class="bottom">57</span>La<span class="top">138.91</span></td>
+                <td><span class="bottom">72</span>Hf<span class="top">178.49</span></td>
+                <td><span class="bottom">73</span>Ta<span class="top">180.95</span></td>
+                <td><span class="bottom">74</span>W<span class="top">183.85</span></td>
+                <td><span class="bottom">75</span>Re<span class="top">186.21</span></td>
+                <td><span class="bottom">76</span>Os<span class="top">190.20</span></td>
+                <td><span class="bottom">77</span>Ir<span class="top">192.22</span></td>
+                <td><span class="bottom">78</span>Rt<span class="top">195.09</span></td>
+            </tr>
+            <tr>
+                <td class="termin">9</td>
+                <td><span class="bottom">79</span>Au<span class="top">196.97</span></td>
+                <td><span class="bottom">80</span>Hg<span class="top">200.59</span></td>
+                <td><span class="bottom">81</span>Tl<span class="top">204.37</span></td>
+                <td><span class="bottom">82</span>Rb<span class="top">207.20</span></td>
+                <td><span class="bottom">83</span>Bi<span class="top">208.98</span></td>
+                <td><span class="bottom">84</span>Po<span class="top">[209]</span></td>
+                <td><span class="bottom">85</span>At<span class="top">[210]</span></td>
+                <td><span class="bottom">86</span>Rn<span class="top">[222]</span></td><td class="white" colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td class="termin">7</td> <td class="termin">10</td>
+                <td><span class="bottom">87</span>Fr<span class="top">[223]</span></td>
+                <td><span class="bottom">88</span>Ra<span class="top">226.03</span></td>
+                <td><span class="bottom">89</span>Ac<span class="top">[227]</span></td>
+                <td><span class="bottom">104</span>Ku<span class="top">[261]</span></td>
+                <td><span class="bottom">105</span>Ns<span class="top">[261]</span></td>
+                <td><span class="bottom">106</span>Sg<span class="top">[263]</span></td>
+                <td><span class="bottom">107</span>Bh<span class="top">[262]</span></td>
+                <td><span class="bottom">108</span>Hs<span class="top">[265]</span></td>
+                <td><span class="bottom">109</span>Hs<span class="top">[266]</span></td>
+                <td class="white"></td>
+            </tr>
+            <tr>
+                <td colspan="14" class="termin">Лантаноиды</td>
+            </tr>
+            <tr>
+                <td><span class="bottom">58</span>Ce<span class="top">140.12</span></td>
+                <td><span class="bottom">59</span>Pr<span class="top">140.91</span></td>
+                <td class="white"><span class="bottom">60</span>Nd<span class="top">144.24</span></td>
+                <td class="white"><span class="bottom">61</span>Pm<span class="top">[145]</span></td>
+                <td><span class="bottom">62</span>Sm<span class="top">150.40</span></td>
+                <td><span class="bottom">63</span>Eu<span class="top">151.96</span></td>
+                <td><span class="bottom">64</span>Gd<span class="top">157.25</span></td>
+                <td><span class="bottom">65</span>Tb<span class="top">158.50</span></td>
+                <td><span class="bottom">66</span>D<span class="top">162.50</span></td>
+                <td><span class="bottom">67</span>Ho<span class="top">164.93</span></td>
+                <td><span class="bottom">68</span>Er<span class="top">167.26</span></td>
+                <td><span class="bottom">69</span>Tm<span class="top">168.93</span></td>
+                <td><span class="bottom">70</span>Yb<span class="top">173.04</span></td>
+                <td><span class="bottom">71</span>Lu<span class="top">174.97</span></td>
+            </tr>
+            <tr>
+                <td colspan="14" class="termin">Актиноиды</td>
+            </tr>
+            <tr>
+                <td><span class="bottom">90</span>Th<span class="top">232.04</span></td>
+                <td><span class="bottom">91</span>Pa<span class="top">231.04</span></td>
+                <td class="white"><span class="bottom">92</span>U<span class="top">238.03</span></td>
+                <td class="white"><span class="bottom">93</span>Np<span class="top">237.5</span></td>
+                <td><span class="bottom">94</span>Pu<span class="top">[244]</span></td>
+                <td><span class="bottom">95</span>Am<span class="top">[243]</span></td>
+                <td><span class="bottom">96</span>Cm<span class="top">[247]</span></td>
+                <td><span class="bottom">97</span>Bk<span class="top">[247]</span></td>
+                <td><span class="bottom">98</span>Cf<span class="top">[251]</span></td>
+                <td><span class="bottom">99</span>Es<span class="top">[254]</span></td>
+                <td><span class="bottom">100</span>Fm<span class="top">[257]</span></td>
+                <td><span class="bottom">101</span>Md<span class="top">[258]</span></td>
+                <td><span class="bottom">102</span>(No)<span class="top">[255]</span></td>
+                <td><span class="bottom">103</span>(Lr)<span class="top">[256]</span></td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+</body>
+</html>

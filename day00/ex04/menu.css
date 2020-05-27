@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    /*margin: 100px 0;*/
+    /*background-color: #E64A19;*/
+    background-color: #245A7A;
+}
+
+nav ul {
+    list-style: none;
+    position: relative;
+    top: 0;
+}
+
+/* применяем inline-block позиционирование к элементам навигации */
+nav ul li {
+    display:inline-block;
+    background-color: #245A7A;
+}
+
+/* стилизуем ссылки */
+nav a {
+    display:block;
+    padding:0 10px;
+    color:#FFF;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
+}
+
+nav a:hover {
+    background-color: #E64A19;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
+    display:inherit;
+}
+
+/* первый уровень выпадающего списка */
+nav ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
