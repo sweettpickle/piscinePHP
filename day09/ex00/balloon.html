@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ballon</title>
+    <style>
+        .circle{
+            width: 200px;
+            height: 200px;
+            background: red;
+            border-radius: 50%;
+            margin: auto;
+        }
+    </style>
+    <script>
+        var color = ["red", "green", "blue"];
+        var size = 200;
+        var i = 0;
+
+        function click_on() {
+            size += 10;
+            i++;
+            if (i > 2)
+                i = 0;
+            if (size > 420)
+                size = 200;
+            document.getElementById("circle").style.width = size + "px";
+            document.getElementById("circle").style.height = size + "px";
+            document.getElementById("circle").style.background = color[i];
+        }
+        
+        function mouse() {
+            size -= 5;
+            i--;
+            if (i < 0)
+                i = 2;
+            if (size < 200)
+                size = 200;
+            document.getElementById("circle").style.width = size + "px";
+            document.getElementById("circle").style.height = size + "px";
+            document.getElementById("circle").style.background = color[i];
+        }
+    </script>
+</head>
+<body>
+
+<div id="circle" onclick="click_on()" onmouseout="mouse()">
+</div>
+
+</body>
+</html>
